@@ -1,3 +1,3 @@
 rootProject.name = 'code-notebook'
-include 'apps:code-vault'
+include 'apps:code-vault', 'apps:vertx-mongo'
 

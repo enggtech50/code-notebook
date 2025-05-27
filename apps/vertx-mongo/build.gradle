@@ -1,0 +1,55 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'tech-engg5.library-conventions'
+}
+
+group = 'com.tech.engg5.vertxmongo'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  gradlePluginPortal()
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'io.vertx:vertx-mongo-client:4.5.1'
+  implementation 'io.vertx:vertx-config-yaml:4.5.1'
+  implementation 'io.vertx:vertx-web:4.5.1'
+  implementation 'junit:junit:4.13.2'
+  implementation 'io.vertx:vertx-web-client:4.5.1'
+  testImplementation platform('org.junit:junit-bom:5.10.0')
+  testImplementation 'org.junit.jupiter:junit-jupiter-api'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+  // Vert.x JUnit 5 integration
+  testImplementation 'io.vertx:vertx-junit5:4.5.1'
+}
+
+application {
+  // Set this to your actual MainVerticle path
+  mainClass = 'io.vertx.core.Launcher'
+}
+
+run {
+  args = ['run', 'com.tech.engg5.vertxmongo.MainVerticle']
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+  testLogging {
+    events "PASSED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
+    showStandardStreams = true
+  }
+}
