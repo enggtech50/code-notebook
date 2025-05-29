@@ -11,6 +11,8 @@ on a MongoDB collection.
 - Gradle
 - JUnit 5
 
+### Local Setup
+
 To start the application, you need to have MongoDB running locally or provide a connection string to a remove MongoDB
 instance. Use the docker command below to run if using Docker on local.
 
@@ -33,4 +35,42 @@ Run the application on local.
 Run all the tests.
 ```shell
 ./gradlew :apps:vertx-mongo:test
+```
+
+### Postman cURL API Requests
+Use the below mentioned postman cURL requests to test the application endpoints.
+
+POST - Create a Product
+```
+curl --location 'http://localhost:8888/products' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Mobile",
+    "price": 999.89
+}'
+```
+
+Get - Get all Products
+```
+curl --location 'http://localhost:8888/products'
+```
+
+GET - Get a Product by ID
+```
+curl --location 'http://localhost:8888/products/<id>'
+```
+
+UPDATE - Update a Product by ID
+```
+curl --location --request PUT 'http://localhost:8888/products/<id>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Mobile",
+    "price": 564.23
+}'
+```
+
+DELETE - Delete a Product by ID
+```
+curl --location --request DELETE 'http://localhost:8888/products/<id>'
 ```
