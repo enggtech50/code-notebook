@@ -1,0 +1,48 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'tech-engg5.library-conventions'
+}
+
+group = 'com.tech.engg5.springbootmongo'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  gradlePluginPortal()
+  mavenCentral()
+}
+
+dependencies {
+  implementation("org.springframework.boot:spring-boot-starter-actuator:3.1.2")
+  implementation("org.springframework.boot:spring-boot-starter-webflux:3.1.2")
+  implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive:3.1.2")
+  testImplementation('org.springframework.boot:spring-boot-starter-test:3.4.2')
+  testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.7.1")
+  testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:2.35.0")
+  testImplementation("org.mockito:mockito-inline:5.2.0")
+  testImplementation("org.testcontainers:junit-jupiter:1.18.3")
+  testImplementation("io.projectreactor:reactor-test:3.5.8")
+  testImplementation("org.apache.httpcomponents.client5:httpclient5-win:5.2.1")
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    exceptionFormat = 'full'
+    showStackTraces = true
+    showExceptions = true
+    showCauses = true
+  }
+  finalizedBy jacocoTestReport
+}
