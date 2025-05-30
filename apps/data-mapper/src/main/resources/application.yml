@@ -1,0 +1,33 @@
+logging.level:
+  root: INFO
+  ReportLogger: ERROR
+
+spring:
+  jackson.default-property-inclusion: non_null
+  main.allow-circular-references: true
+
+management:
+  info:
+    git:
+      enabled: true
+      mode: full
+    endpoints:
+      web:
+        exposure:
+          include: health, info, env
+    endpoint:
+      health:
+        show-components: always
+        show-details: always
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: false
+
+data-file:
+  path: 'ENTER DATA FILE PATH HERE'
