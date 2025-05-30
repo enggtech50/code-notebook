@@ -1,0 +1,41 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'tech-engg5.library-conventions'
+}
+
+group = 'com.tech.engg5.datamapper'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  gradlePluginPortal()
+  mavenCentral()
+}
+
+dependencies {
+  implementation("org.springframework.boot:spring-boot-starter-webflux:3.1.2")
+  implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+  implementation("com.sun.xml.bind:jaxb-impl:4.0.5")
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    exceptionFormat = 'full'
+    showStackTraces = true
+    showExceptions = true
+    showCauses = true
+  }
+  finalizedBy jacocoTestReport
+}

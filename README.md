@@ -8,6 +8,8 @@ reusable components, and real-world microservice-inspired architectures.
 
 - code-vault - Java sample programs
 - vertx-mongo - Vert.x with MongoDB setup
+- springboot-mongo - Spring Boot with MongoDB setup
+- data-mapper - Data Mapping-Unmapping (Marshal-Unamrshal) setup
 
 ### Github squash commits commands
 Follow the below mentioned steps to squash the commits before merging PR to main branch. Change the parent branch name,
