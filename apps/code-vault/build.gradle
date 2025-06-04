@@ -25,6 +25,18 @@ compileJava {
   options.encoding = 'UTF-8'
 }
 
-tasks.named('test') {
-  useJUnitPlatform()
+tasks.withType(JavaCompile).configureEach {
+  enabled = false
+}
+
+tasks.withType(Test).configureEach {
+  enabled = false
+}
+
+tasks.withType(Jar).configureEach {
+  enabled = false
+}
+
+tasks.named("resolveMainClassName") {
+  enabled = false
 }

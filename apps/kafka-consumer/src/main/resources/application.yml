@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: false
+
+management:
+  info:
+    git:
+      enabled: true
+      mode: full
+    endpoints:
+      web:
+        exposure:
+          include: health, info, env
+    endpoint:
+      health:
+        show-components: always
+        show-details: always
+
+logging.level:
+  root: INFO
+  ReportLogger: ERROR
+
+spring:
+  jackson.default-property-inclusion: non_null
+  main.allow-circular-references: true
+  kafka:
+    bootstrap-servers: 'ENTER KAFKA SERVER HOST:PORT'
+    consumer:
+      group-id: 'ENTER CONSUMER GROUP ID'
+      topic: 'ENTER TOPIC NAME'
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
