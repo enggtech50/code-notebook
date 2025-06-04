@@ -13,12 +13,7 @@ CRUD operations on a mongodb collection.
 
 ### Local Setup
 
-To start the application, you need to have MongoDB running locally or provide a connection string to a remove MongoDB
-instance. Use the docker command below to run if using Docker on local.
-
-```shell
-docker compose up -d
-```
+To start the application, refer the root README.md file for instructions.
 
 Clean build the application.
 
