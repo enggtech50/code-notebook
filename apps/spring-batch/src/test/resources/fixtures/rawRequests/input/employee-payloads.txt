@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><Employee_Payload>
+<employeeId>01</employeeId>
+<employeeName>John Doe</employeeName>
+<age>29</age>
+<gender>M</gender>
+<contactInfo>
+<email>abc@company.com</email>
+<phoneNumber>012341223</phoneNumber>
+</contactInfo>
+<addressInfo>
+<street>Street 1</street>
+<city>City 1</city>
+<state>State 1</state>
+<country>Country 1</country>
+<zipCode>1234</zipCode>
+</addressInfo>
+<jobInfo>
+<jobTitle>Software Engineer</jobTitle>
+<jobFamily>Engineering</jobFamily>
+<salary>35000.00</salary>
+<jobLevel>12</jobLevel>
+<jobStartDate>2024-12-31T12:04:45Z</jobStartDate>
+</jobInfo>
+</Employee_Payload>
+<?xml version="1.0" encoding="UTF-8"?><Employee_Payload>
+<employeeId>02</employeeId>
+<employeeName>Mon Doe</employeeName>
+<age>28</age>
+<gender>M</gender>
+<contactInfo>
+<email>xyz@company.com</email>
+<phoneNumber>0123412454</phoneNumber>
+</contactInfo>
+<addressInfo>
+<street>Street 2</street>
+<city>City 2</city>
+<state>State 2</state>
+<country>Country 2</country>
+<zipCode>1234</zipCode>
+</addressInfo>
+<jobInfo>
+<jobTitle>System Engineer</jobTitle>
+<jobFamily>Support</jobFamily>
+<salary>30000.00</salary>
+<jobLevel>13</jobLevel>
+<jobStartDate>2024-07-28T13:59:59Z</jobStartDate>
+</jobInfo>
+</Employee_Payload>

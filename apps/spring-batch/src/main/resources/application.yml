@@ -1,0 +1,52 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jackson.default-property-inclusion: non_null
+  main.allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/localEnv
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+    platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  batch:
+    initialize-schema: always
+
+logging.level:
+  root: INFO
+  ReportLogger: ERROR
+
+management:
+  info:
+    git:
+      enabled: true
+      mode: full
+    endpoints:
+      web:
+        exposure:
+          include: health, info, env
+    endpoint:
+      health:
+        show-components: always
+        show-details: always
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: false
+
+batch-processor:
+  source:
+    input-path: apps/spring-batch/files/input
+  destination:
+    output-path: apps/spring-batch/files/output

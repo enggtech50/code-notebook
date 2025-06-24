@@ -1,4 +1,3 @@
 rootProject.name = 'code-notebook'
 include 'apps:code-vault', 'apps:vertx-mongo', 'apps:springboot-mongo', 'apps:data-mapper', 'apps:kafka-consumer',
-'apps:kafka-producer'
-
+'apps:kafka-producer', 'apps:spring-batch'

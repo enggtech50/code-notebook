@@ -12,6 +12,7 @@ reusable components, and real-world microservice-inspired architectures.
 - data-mapper - Data Mapping-Unmapping (Marshal-Unamrshal) setup
 - kafka-consumer - Spring Kafka Consumer setup
 - kafka-producer - Spring Kafka Producer setup
+- spring-batch - Spring Batch application setup
 
 ### Github squash commits commands
 Follow the below mentioned steps to squash the commits before merging PR to main branch. Change the parent branch name,
@@ -63,3 +64,6 @@ bin/server-start.sh config/server.properties
 ```
 bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic <topic-name> --partitions 3 --replication-factor 1
 ```
+
+- PostgreSQL local-instance (If not using Docker)
+  - Download and install the PostgreSQL binaries from [Download PostgreSQL](https://www.postgresql.org/download/), depending on your machine.
