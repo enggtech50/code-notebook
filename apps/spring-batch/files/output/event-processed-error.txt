@@ -1,0 +1,5 @@
+[READ ERROR]
+Record: null
+Error: Unrecognized field "jobInfo" (class com.tech.engg5.springbatch.model.AddressInfo), not marked as ignorable (5 known properties: "state", "street", "country", "city", "zipCode"])
+ at [Source: (StringReader); line: 1, column: 394] (through reference chain: com.tech.engg5.springbatch.model.EmployeeRaw["addressInfo"]->com.tech.engg5.springbatch.model.AddressInfo["jobInfo"])
+
